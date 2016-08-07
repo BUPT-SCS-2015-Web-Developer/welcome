@@ -778,6 +778,6 @@ if(!isset($_SESSION['usrid']))
         });
     });
 </script>
-<?php echo "<script>console.log( 'YB_UID: " . $_SESSION['usrid'] . "' );</script>"; ?>
+<?php //echo "<script>console.log( 'YB_UID: " . $_SESSION['usrid'] . "' );</script>"; ?>
 </body>
 </html>
