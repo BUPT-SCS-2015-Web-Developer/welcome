@@ -40,8 +40,6 @@ fabric.properties
 #APPLE
 .DS_Store
 
-#db_config
-
+#config file
 db_config.*
 config.php
-header_api_session.php
