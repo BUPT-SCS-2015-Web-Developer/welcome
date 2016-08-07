@@ -54,7 +54,7 @@ if(!isset($_SESSION['usrid']))
         }
 
         .am-tab-panel {
-            background-color: rgba(0, 0, 0, 0.4);
+            background-color: rgba(255, 255, 255, 0.5);
             padding-top: 0 !important;
             padding-bottom: 0 !important;
         }
@@ -88,9 +88,9 @@ if(!isset($_SESSION['usrid']))
         .blackBlock {
             margin: 10px;
             margin-top: 0;
-            background-color: rgba(0, 0, 0, 0.4);
-            color: white;
-            text-shadow: 0 0 3px black;
+            background-color: rgba(255, 255, 255, 0.6);
+            color: black;
+            text-shadow: 0 0 3px white;
             height: auto;
             min-height: 100%;
         }
@@ -100,21 +100,14 @@ if(!isset($_SESSION['usrid']))
         }
 
         input, select, textarea {
-            background-color: rgba(0, 0, 0, 0.1) !important;
-            color: rgba(255, 255, 255, 1) !important;
+           
         }
 
-        option {
-            color: rgba(0, 0, 0, 0.9) !important;
+        legend {
+            border-bottom-color:rgba(0,0,0,0.8);
         }
 
-        .am-accordion-item dt, .am-accordion-item dl, .am-accordion-item dd, .am-accordion-content {
-            color: white !important;
-        }
 
-        .am-table {
-            color: white !important;
-        }
 
         fieldset h2 {
             margin-top: 0px;
@@ -165,6 +158,19 @@ if(!isset($_SESSION['usrid']))
             <li><a href="safe.html">安全教育</a></li>
             <li><a href="note.html">入学须知</a></li>
         </ul>
+
+        <ul class="am-nav am-nav-pills am-topbar-nav am-topbar-right admin-header-list">
+            <li class="am-dropdown" data-am-dropdown>
+                <a class="am-dropdown-toggle" data-am-dropdown-toggle href="javascript:;">
+                    <span class="am-icon-users"></span> 我 <span class="am-icon-caret-down"></span>
+                </a>
+                <ul class="am-dropdown-content">
+                    <li><a href="#"><span class="am-icon-user"></span> 登录</a></li>
+                    <li><a href="#"><span class="am-icon-cog"></span> 设置</a></li>
+                    <li><a href="#"><span class="am-icon-power-off"></span> 退出</a></li>
+                </ul>
+            </li>
+        </ul>
     </div>
 
 </header>
@@ -186,7 +192,7 @@ if(!isset($_SESSION['usrid']))
                 <div class="blackBlock">
                     <form action="backend/regDataHandler.php?formid=1" method="post" class="am-form" id="form1" data-am-validator>
                         <fieldset>
-                            <legend style="color:white">基本信息</legend>
+                            <legend style="color:black">基本信息</legend>
 
                             <div class="am-form-group">
                                 <label for="form1Name">姓名</label>
@@ -374,7 +380,7 @@ if(!isset($_SESSION['usrid']))
                 <div class="blackBlock">
                     <form action="backend/regDataHandler.php?formid=2" method="post" class="am-form" id="form2" data-am-validator>
                         <fieldset>
-                            <legend style="color:white">家庭信息</legend>
+                            <legend style="color:black">家庭信息</legend>
 
                             <h2>父母或直系亲属(一)</h2>
                             <hr>
@@ -571,7 +577,7 @@ if(!isset($_SESSION['usrid']))
                 <div class="blackBlock">
                     <form action="backend/regDataHandler.php?formid=3" method="post" class="am-form" id="form3" data-am-validator>
                         <fieldset>
-                            <legend style="color:white">军训服装</legend>
+                            <legend style="color:black">军训服装</legend>
 
                             <div class="am-form-group">
                                 <label for="form3Size">军训服尺码</label>
@@ -778,6 +784,6 @@ if(!isset($_SESSION['usrid']))
         });
     });
 </script>
-<?php //echo "<script>console.log( 'YB_UID: " . $_SESSION['usrid'] . "' );</script>"; ?>
+<?php echo "<script>console.log( 'YB_UID: " . $_SESSION['usrid'] . "' );</script>"; ?>
 </body>
 </html>
