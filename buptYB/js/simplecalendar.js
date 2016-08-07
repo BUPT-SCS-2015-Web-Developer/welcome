@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 var calendar = {
 
     init: function() {

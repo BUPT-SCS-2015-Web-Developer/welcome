@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 /* jquery.nicescroll
 -- version 3.5.0 BETA5
 -- copyright 2011-12-13 InuYaksa*2013

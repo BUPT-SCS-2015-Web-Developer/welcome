@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 $(function(){
     var vw = $(window).width()/100;
     var vh = $(window).height()/100;
