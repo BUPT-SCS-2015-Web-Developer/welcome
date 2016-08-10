@@ -222,6 +222,10 @@
     <script src="assets/js/js.cookie.js"></script>
 <script>
     Cookies.set("recent",1);
+	$('td').on('click', function() {
+		var $w = $('#the-box');
+		$w.smoothScroll({position: $('table').height()});
+    });
 </script>
 <script src="buptYB/js/nav.js"></script>
 <!--<![endif]-->

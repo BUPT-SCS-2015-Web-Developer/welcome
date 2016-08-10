@@ -49,6 +49,12 @@ if(!isset($_SESSION['usrid']))
     <link rel="stylesheet" href="assets/css/amazeui.css">
     <link rel="stylesheet" href="buptYB/css/style.css">
     <style>
+
+        [class*="am-u-"] {
+            padding-left: 0;
+            padding-right: 0;
+        }
+
         .am-tabs {
 
         }
@@ -107,7 +113,10 @@ if(!isset($_SESSION['usrid']))
             border-bottom-color:rgba(0,0,0,0.8);
         }
 
-
+        p {
+            padding-left: 10px;
+            padding-right: 10px;
+        }
 
         fieldset h2 {
             margin-top: 0px;
@@ -183,6 +192,7 @@ if(!isset($_SESSION['usrid']))
             <li id="panelLi1" class="am-active"><a href="[data-tab-panel-0]">基本信息</a></li>
             <li id="panelLi2" class=""><a href="[data-tab-panel-1]">家庭信息</a></li>
             <li id="panelLi3" class=""><a href="[data-tab-panel-2]">军训服装</a></li>
+            <li id="panelLi4" class=""><a href="[data-tab-panel-3]">文体宣（选）</a></li>
         </ul>
 
         <div class="am-tabs-bd">
@@ -262,8 +272,13 @@ if(!isset($_SESSION['usrid']))
                             </div>
 
                             <div class="am-form-group">
-                                <label for="form1School">专业</label>
+                                <label for="form1Major">专业</label>
                                 <input type="text" class="" id="form1Major" name="form1Major" placeholder="请输入所在专业" required>
+                            </div>
+
+                            <div class="am-form-group">
+                                <label for="form1Class">班级</label>
+                                <input type="text" class="" id="form1Class" name="form1Class" placeholder="请输入所在班级" required>
                             </div>
 
                             <div class="am-form-group">
@@ -594,9 +609,23 @@ if(!isset($_SESSION['usrid']))
                                 <span class="am-form-caret"></span>
                             </div>
 
+                            <div class="am-form-group">
+                                <label for="form3Size_T">新生T恤尺码</label>
+                                <select id="form3Size_T" name="form3Size_T" required>
+                                    <option disabled selected>请选择</option>
+                                    <option>S</option>
+                                    <option>M</option>
+                                    <option>L</option>
+                                    <option>XL</option>
+                                    <option>XXL</option>
+                                    <option>XXXL</option>
+                                </select>
+                                <span class="am-form-caret"></span>
+                            </div>
+
                             <section data-am-widget="accordion" class="am-accordion am-accordion-basic"
                                      data-am-accordion='{  }' id="section">
-                                <dl class="am-accordion-item">
+                                <dl class="am-accordion-items">
                                     <dt class="am-accordion-title">
                                         服装尺码与身高尺寸对照表
                                     </dt>
@@ -666,6 +695,129 @@ if(!isset($_SESSION['usrid']))
                             </div>
                             <p>
                                 <button id="form3Submit" type="submit" class="am-btn am-btn-default">提交</button>
+                            </p>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+
+            <!-- 文体宣申请（选填） -->
+            <div id="panel4" data-tab-panel-3 class="am-tab-panel am-scrollable-vertical">
+                <div class="blackBlock">
+                    <form action="backend/regDataHandler.php?formid=4" method="post" class="am-form" id="form4" data-am-validator>
+                        <fieldset>
+                            <legend style="color:black">文体宣申请（选填）</legend>
+
+                            <h2>文体宣介绍</h2>
+                            <p>军训文体活动的组织团队，同学们进入大学以来可以参加的首个学生组织。我们以“服务参训同学、
+                                丰富军训生活”为宗旨，开展一系列文体活动的准备、宣传与报道工作。举办包括拔河、
+                                合唱比赛在内的多项活动，文体宣的小伙伴们也在军训生活中闪耀着别样的光彩</p>
+
+                            <div class="am-form-group">
+                                <label for="form4Group">参加组别</label>
+                                <select id="form4Group" name="form4Group" required>
+                                    <option disabled selected>请选择</option>
+                                    <option>网络技术</option>
+                                    <option>文艺体育</option>
+                                    <option>新闻宣传</option>
+                                </select>
+                                <span class="am-form-caret"></span>
+                            </div>
+                            <br>
+
+                            <legend style="color:black">专业技术掌握情况（请如实填写）</legend>
+
+                            <div class="am-form-group">
+                                <label for="form4Tech_Office">Office系列</label>
+                                <select id="form4Tech_Office" name="form4Tech_Office" required>
+                                    <option disabled selected>请选择</option>
+                                    <option>熟练掌握</option>
+                                    <option>了解</option>
+                                    <option>不了解</option>
+                                </select>
+                                <span class="am-form-caret"></span>
+                            </div>
+
+                            <div class="am-form-group">
+                                <label for="form4Tech_AE">Aftereffect</label>
+                                <select id="form4Tech_AE" name="form4Tech_AE" required>
+                                    <option disabled selected>请选择</option>
+                                    <option>熟练掌握</option>
+                                    <option>了解</option>
+                                    <option>不了解</option>
+                                </select>
+                                <span class="am-form-caret"></span>
+                            </div>
+
+                            <div class="am-form-group">
+                                <label for="form4Tech_PR">Premiere</label>
+                                <select id="form4Tech_PR" name="form4Tech_PR" required>
+                                    <option disabled selected>请选择</option>
+                                    <option>熟练掌握</option>
+                                    <option>了解</option>
+                                    <option>不了解</option>
+                                </select>
+                                <span class="am-form-caret"></span>
+                            </div>
+
+                            <div class="am-form-group">
+                                <label for="form4Tech_PS">Photoshop</label>
+                                <select id="form4Tech_PS" name="form4Tech_PS" required>
+                                    <option disabled selected>请选择</option>
+                                    <option>熟练掌握</option>
+                                    <option>了解</option>
+                                    <option>不了解</option>
+                                </select>
+                                <span class="am-form-caret"></span>
+                            </div>
+
+                            <div class="am-form-group">
+                                <label for="form4Tech_News">新闻撰写</label>
+                                <select id="form4Tech_News" name="form4Tech_News" required>
+                                    <option disabled selected>请选择</option>
+                                    <option>熟练掌握</option>
+                                    <option>了解</option>
+                                    <option>不了解</option>
+                                </select>
+                                <span class="am-form-caret"></span>
+                            </div>
+
+                            <div class="am-form-group">
+                                <label for="form4Tech_PnV">摄影/摄像</label>
+                                <select id="form4Tech_PnV" name="form4Tech_PnV" required>
+                                    <option disabled selected>请选择</option>
+                                    <option>熟练掌握</option>
+                                    <option>了解</option>
+                                    <option>不了解</option>
+                                </select>
+                                <span class="am-form-caret"></span>
+                            </div>
+
+                            <div class="am-form-group">
+                                <label for="form4Tech_PnV_Device">接上题：拥有摄影设备型号（上题否定回答 或 无 则留空）</label>
+                                <input type="text" class="" id="form4Tech_PnV_Device" name="form4Tech_PnV_Device" placeholder="例：Cannon 600D">
+                            </div>
+
+                            <div class="am-form-group">
+                                <label for="form4Tech_Others">其他</label>
+                                <textarea class="" rows="4" id="form4Tech_Others" name="form4Tech_Others"
+                                          placeholder="请填写其他技能"></textarea>
+                            </div>
+
+                            <div class="am-form-group">
+                                <label for="form4Exp">相关经验</label>
+                                <textarea class="" rows="6" id="form4Exp" name="form4Exp"
+                                          placeholder="" required></textarea>
+                            </div>
+
+                            <div class="am-form-group">
+                                <label for="form4Intro">自我简介</label>
+                                <textarea class="" rows="8" id="form4Intro" name="form4Intro"
+                                          placeholder="" required></textarea>
+                            </div>
+
+                            <p>
+                                <button id="form4Submit" type="submit" class="am-btn am-btn-default">提交</button>
                             </p>
                         </fieldset>
                     </form>
@@ -743,6 +895,8 @@ if(!isset($_SESSION['usrid']))
                     $("#panelLi2").removeClass("am-active");
                     $("#panel3").removeClass("am-active");
                     $("#panelLi3").removeClass("am-active");
+                    $("#panel4").removeClass("am-active");
+                    $("#panelLi4").removeClass("am-active");
                 }
                     break;
                 case "2":
@@ -753,6 +907,8 @@ if(!isset($_SESSION['usrid']))
                     $("#panelLi1").removeClass("am-active");
                     $("#panel3").removeClass("am-active");
                     $("#panelLi3").removeClass("am-active");
+                    $("#panel4").removeClass("am-active");
+                    $("#panelLi4").removeClass("am-active");
                 }
                     break;
                 case "3":
@@ -763,6 +919,20 @@ if(!isset($_SESSION['usrid']))
                     $("#panelLi1").removeClass("am-active");
                     $("#panel2").removeClass("am-active");
                     $("#panelLi2").removeClass("am-active");
+                    $("#panel4").removeClass("am-active");
+                    $("#panelLi4").removeClass("am-active");
+                    break;
+                }
+                case "4":
+                {
+                    $("#panel4").addClass("am-active");
+                    $("#panelLi4").addClass("am-active");
+                    $("#panel1").removeClass("am-active");
+                    $("#panelLi1").removeClass("am-active");
+                    $("#panel2").removeClass("am-active");
+                    $("#panelLi2").removeClass("am-active");
+                    $("#panel3").removeClass("am-active");
+                    $("#panelLi3").removeClass("am-active");
                 }
                     break;
                 default:
@@ -782,8 +952,11 @@ if(!isset($_SESSION['usrid']))
         $("#form3").submit(function () {
             Cookies.set('form3', 'true');
         });
+        $("#form4").submit(function () {
+            Cookies.set('form4', 'true');
+        });
     });
 </script>
-<?php echo "<script>console.log( 'YB_UID: " . $_SESSION['usrid'] . "' );</script>"; ?>
+<?php //echo "<script>console.log( 'YB_UID: " . $_SESSION['usrid'] . "' );</script>"; ?>
 </body>
 </html>

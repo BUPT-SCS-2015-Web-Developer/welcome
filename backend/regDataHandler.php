@@ -6,8 +6,8 @@
  * Time: 19:54
  */
 //error_reporting(0);
-include ('header_api_session.php');
-include ('iapp.php');
+//include ('header_api_session.php');
+//include ('iapp.php');
 include ('db_config.php');
 
 //Build database connection
@@ -44,7 +44,7 @@ function isexist(PDO $DBH, $YBUID)
     return $user;
 }
 
-if(!(isset($_POST['form1Name']) or isset($_POST['form2-1Name']) or isset($_POST['form3Size'])))
+if(!(isset($_POST['form1Name']) or isset($_POST['form2-1Name']) or isset($_POST['form3Size']) or isset($_POST['form4Group'])))
 {
     die("请返回上一页面重新提交！");
 }
@@ -61,6 +61,7 @@ switch ($_GET['formid'])
             'form1PoliticalStatus'	=>	$_POST['form1PoliticalStatus'],
             'form1School'	=>	$_POST['form1School'],
             'form1Major'	=>	$_POST['form1Major'],
+            'form1Class'	=>	$_POST['form1Class'],
             'form1Household'	=>	$_POST['form1Household'],
             'form1Residing'	=>	$_POST['form1Residing'],
             'form1Postcode'	=>	$_POST['form1Postcode'],
@@ -114,6 +115,7 @@ switch ($_GET['formid'])
     case 3:
         $data = [
             'form3Size'	=>	$_POST['form3Size'],
+            'form3Size_T'	=>	$_POST['form3Size_T'],
             'form3Shoe'	=>	$_POST['form3Shoe'],
             'form3intentionA'	=>	$_POST['form3intentionA'],
             'form3intentionB'	=>	$_POST['form3intentionB'],
@@ -121,11 +123,27 @@ switch ($_GET['formid'])
             'SumbitTimeofForm3'	=>	date("Y-m-d H:i:s"),
         ];
         break;
+    case 4:
+        $data = [
+            'form4Group'	=>	$_POST['form4Group'],
+            'form4Tech_Office'	=>	$_POST['form4Tech_Office'],
+            'form4Tech_AE'	=>	$_POST['form4Tech_AE'],
+            'form4Tech_PR'	=>	$_POST['form4Tech_PR'],
+            'form4Tech_PS'	=>	$_POST['form4Tech_PS'],
+            'form4Tech_News'	=>	$_POST['form4Tech_News'],
+            'form4Tech_PnV'	=>	$_POST['form4Tech_PnV'],
+            'form4Tech_PnV_Device'	=>	$_POST['form4Tech_PnV_Device'],
+            'form4Tech_Others'	=>	$_POST['form4Tech_Others'],
+            'form4Exp'	=>	$_POST['form4Exp'],
+            'form4Intro'	=>	$_POST['form4Intro'],
+            'SumbitTimeofForm4'	=>	date("Y-m-d H:i:s"),
+        ];
+        break;
     default:
         header('Location: /index.php');
         exit;
 }
-$data['YBUID'] = $_SESSION['usrid'];
+$data['YBUID'] = 12312;//$_SESSION['usrid'];
 $data['LastSumbitIP'] = getipaddr();
 
 $fields = array_keys($data); // We trust field names
@@ -152,4 +170,4 @@ try {
 }
 //*/
 //header('Location: /register.php?type='.($_GET['formid'] < 3) ? ($_GET['formid'] + 1) : '3');
-echo "<script language='javascript'>document.location = '../register.php?type=".(($_GET['formid'] < 3) ? ($_GET['formid'] + 1) : '3')."';</script>";
+echo "<script language='javascript'>document.location = '../register.php?type=".(($_GET['formid'] < 4) ? ($_GET['formid'] + 1) : '4')."';</script>";
