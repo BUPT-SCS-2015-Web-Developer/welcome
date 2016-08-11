@@ -1,4 +1,5 @@
 <?php
+error_reporting(0);
 /*
 include ('backend/header_api_session.php');
 include ('backend/iapp.php');
@@ -9,7 +10,7 @@ if(!isset($_SESSION['usrid']))
     echo "<script language='javascript'>document.location = 'index.php';</script>";
     exit;
 }
-*/
+//*/
 ?>
 <html class="no-js">
 <head>
@@ -957,6 +958,6 @@ if(!isset($_SESSION['usrid']))
         });
     });
 </script>
-<?php //echo "<script>console.log( 'YB_UID: " . $_SESSION['usrid'] . "' );</script>"; ?>
+<?php echo "<script>console.log( 'YB_UID: " . $_SESSION['usrid'] . "' );</script>"; ?>
 </body>
 </html>

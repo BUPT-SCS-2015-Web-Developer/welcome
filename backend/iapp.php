@@ -41,6 +41,8 @@
 			$_SESSION['token']	= $info['visit_oauth']['access_token'];
 			$_SESSION['usrid']	= $info['visit_user']['userid'];
 			$_SESSION['name']	= $info['visit_user']['username'];
+
+            //$user = $api->getUser();
 		}
 		catch (YBException $ex)
 		{
