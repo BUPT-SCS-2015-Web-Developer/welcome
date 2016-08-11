@@ -9,8 +9,7 @@
     
     text-align: center;
 }
-.calendar table{ 
-    margin-bottom: 30px;
+.calendar table{
     background-color: rgba(255, 255, 255, 0.7);
     float: left;
 }
@@ -193,10 +192,10 @@ span:hover {
     border: 2px solid transparent;
     border-radius: 50%;
     display: inline-block;
-    height: 64px;
-    line-height: 64px;
+    height: 52px;
+    line-height: 52px;
     text-align: center;
-    width: 64px;
+    width: 52px;
 }
 
 .current-day {

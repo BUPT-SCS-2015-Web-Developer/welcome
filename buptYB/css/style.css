@@ -7,9 +7,6 @@ p{
   text-indent: 2em;
   word-break:break-all;
 }
-#container strong{
-  color:#da3f3f;
-}
 ul {
   margin-top: 0;
 }
@@ -79,10 +76,10 @@ ul {
    left:auto;
 }
   .my-article{
-    padding: 20px;
-      position: absolute;
-    width:80%;
-    left:10%;
+    padding: 10px;
+    position: absolute;
+    width:90%;
+    left:3%;
   }
 }
 #the-box{
