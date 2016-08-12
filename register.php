@@ -4,7 +4,7 @@ error_reporting(0);
 include ('backend/header_api_session.php');
 include ('backend/iapp.php');
 
-if(!isset($_SESSION['usrid']))
+if(!isset($_SESSION['usrid']) or $_SESSION['usrid']=='')
 {
     session_regenerate_id(true);
     echo "<script language='javascript'>document.location = 'index.php';</script>";
@@ -105,7 +105,7 @@ if(!isset($_SESSION['usrid']))
         }
 
         .am-scrollable-vertical {
-            height: 86%;
+            height: 90%;
         }
 
         input, select, textarea {
@@ -183,19 +183,6 @@ if(!isset($_SESSION['usrid']))
             <li><a href="safe.html">安全教育</a></li>
             <li><a href="note.html">入学须知</a></li>
         </ul>
-
-        <ul class="am-nav am-nav-pills am-topbar-nav am-topbar-right admin-header-list">
-            <li class="am-dropdown" data-am-dropdown>
-                <a class="am-dropdown-toggle" data-am-dropdown-toggle href="javascript:;">
-                    <span class="am-icon-users"></span> 我 <span class="am-icon-caret-down"></span>
-                </a>
-                <ul class="am-dropdown-content">
-                    <li><a href="#"><span class="am-icon-user"></span> 登录</a></li>
-                    <li><a href="#"><span class="am-icon-cog"></span> 设置</a></li>
-                    <li><a href="#"><span class="am-icon-power-off"></span> 退出</a></li>
-                </ul>
-            </li>
-        </ul>
     </div>
 
 </header>
@@ -218,11 +205,17 @@ if(!isset($_SESSION['usrid']))
                 <div class="blackBlock">
                     <form action="backend/regDataHandler.php?formid=1" method="post" class="am-form" id="form1" data-am-validator>
                         <fieldset>
-                            <legend style="color:black">基本信息</legend>
+                            <legend style="color:black; margin-bottom:0;">基本信息</legend>
+                            <p style="text-indent:0; padding-left:0; margin-top:0;">学号等学校信息请前往 <a href="http://welcome.bupt.edu.cn/" target="_blank">http://welcome.bupt.edu.cn/</a> 查询</p>
 
                             <div class="am-form-group">
                                 <label for="form1Name">姓名</label>
                                 <input type="text" class="" id="form1Name" name="form1Name" placeholder="请输入姓名" required>
+                            </div>
+
+                            <div class="am-form-group">
+                                <label for="BUPTID">学号</label>
+                                <input type="text" class="" id="BUPTID" name="BUPTID" placeholder="例: 2015211222" required>
                             </div>
 
                             <div class="am-form-group">
@@ -294,7 +287,7 @@ if(!isset($_SESSION['usrid']))
 
                             <div class="am-form-group">
                                 <label for="form1Class">班级</label>
-                                <input type="text" class="" id="form1Class" name="form1Class" placeholder="请输入所在班级" required>
+                                <input type="text" class="" id="form1Class" name="form1Class" placeholder="例: 2015211333" required>
                             </div>
 
                             <div class="am-form-group">
@@ -441,7 +434,7 @@ if(!isset($_SESSION['usrid']))
 
                             <div class="am-form-group">
                                 <label for="form2-1ID">身份证号</label>
-                                <input type="text" class="" id="form2-1ID" name="form2-1ID" placeholder="请输入18位身份证号" required>
+                                <input type="text" class="" id="form2-1ID" name="form2-1ID" placeholder="请输入18位身份证号" >
                             </div>
 
                             <div class="am-form-group">
@@ -823,13 +816,13 @@ if(!isset($_SESSION['usrid']))
                             <div class="am-form-group">
                                 <label for="form4Exp">相关经验</label>
                                 <textarea class="" rows="6" id="form4Exp" name="form4Exp"
-                                          placeholder="" required></textarea>
+                                          placeholder="重要！请认真填写！" required></textarea>
                             </div>
 
                             <div class="am-form-group">
                                 <label for="form4Intro">自我简介</label>
                                 <textarea class="" rows="8" id="form4Intro" name="form4Intro"
-                                          placeholder="" required></textarea>
+                                          placeholder="重要！请认真填写！" required></textarea>
                             </div>
 
                             <p>
@@ -862,6 +855,7 @@ if(!isset($_SESSION['usrid']))
     Cookies.set("register",1);
 </script>
 <script src="buptYB/js/nav.js"></script>
+<script src="buptYB/js/easter_egg.js"></script>
 
 <script>
 

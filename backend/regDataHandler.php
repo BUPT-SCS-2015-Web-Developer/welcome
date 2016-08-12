@@ -54,7 +54,7 @@ switch ($_GET['formid'])
 {
     case 1:
         $data = [
-            'BUPTID'	=>	$_POST['form1Name'],
+            'BUPTID'	=>	$_POST['BUPTID'],
             'form1Name'	=>	$_POST['form1Name'],
             'form1Nation'	=>	$_POST['form1Nation'],
             'form1Sex'	=>	$_POST['form1Sex'],
@@ -172,4 +172,4 @@ try {
 }
 //*/
 //header('Location: /register.php?type='.($_GET['formid'] < 3) ? ($_GET['formid'] + 1) : '3');
-echo "<script language='javascript'>document.location = '../register.php?type=".(($_GET['formid'] < 4) ? ($_GET['formid'] + 1) : '4')."';</script>";
+echo "<script language='javascript'>document.location = '../register.php?type=".(($_GET['formid'] < 3) ? ($_GET['formid'] + 1) : '3')."';</script>";
