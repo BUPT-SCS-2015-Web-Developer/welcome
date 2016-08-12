@@ -49,15 +49,17 @@ if(!isset($_SESSION['usrid']))
     <link rel="stylesheet" href="assets/css/amazeui.css">
     <link rel="stylesheet" href="buptYB/css/style.css">
     <style>
-
+        
+        #container {
+            max-width:1280px;
+            margin:0 auto;
+        }
         [class*="am-u-"] {
             padding-left: 0;
             padding-right: 0;
         }
-
-        .am-tabs {
-
-        }
+        
+        
 
         .am-tab-panel {
             background-color: rgba(255, 255, 255, 0.5);
@@ -120,6 +122,19 @@ if(!isset($_SESSION['usrid']))
 
         fieldset h2 {
             margin-top: 0px;
+        }
+        
+        @media (max-width : 768px) {
+            .blackBlock {
+                margin:2px;
+            }
+            .am-tab-panel {
+                padding-left:0!important;
+                padding-right:0!important;
+            }
+            .am-tabs {
+                margin:3px;
+            }
         }
     </style>
 </head>
