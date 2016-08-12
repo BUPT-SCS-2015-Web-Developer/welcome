@@ -5,7 +5,7 @@
  * Date: 2016/8/2
  * Time: 5:42
  */
-//error_reporting(0);
+error_reporting(0);
 include ('header_api_session.php');
 include ('iapp.php');
 include ('db_config.php');

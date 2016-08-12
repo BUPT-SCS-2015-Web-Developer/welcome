@@ -5,9 +5,9 @@
  * Date: 2016/7/29
  * Time: 19:54
  */
-//error_reporting(0);
-//include ('header_api_session.php');
-//include ('iapp.php');
+error_reporting(0);
+include ('header_api_session.php');
+include ('iapp.php');
 include ('db_config.php');
 
 //Build database connection
@@ -46,6 +46,7 @@ function isexist(PDO $DBH, $YBUID)
 
 if(!(isset($_POST['form1Name']) or isset($_POST['form2-1Name']) or isset($_POST['form3Size']) or isset($_POST['form4Group'])))
 {
+    header('Location:../index.php');
     die("请返回上一页面重新提交！");
 }
 
@@ -53,6 +54,7 @@ switch ($_GET['formid'])
 {
     case 1:
         $data = [
+            'BUPTID'	=>	$_POST['form1Name'],
             'form1Name'	=>	$_POST['form1Name'],
             'form1Nation'	=>	$_POST['form1Nation'],
             'form1Sex'	=>	$_POST['form1Sex'],
@@ -143,7 +145,7 @@ switch ($_GET['formid'])
         header('Location: /index.php');
         exit;
 }
-$data['YBUID'] = 12312;//$_SESSION['usrid'];
+$data['YBUID'] = $_SESSION['usrid'];
 $data['LastSumbitIP'] = getipaddr();
 
 $fields = array_keys($data); // We trust field names

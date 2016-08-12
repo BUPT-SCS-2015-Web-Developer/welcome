@@ -1,6 +1,7 @@
 <?php
-//include ('backend/header_api_session.php');
-//include ('backend/iapp.php');
+error_reporting(0);
+include ('backend/header_api_session.php');
+include ('backend/iapp.php');
 ?>
 <html class="no-js">
 <head>
