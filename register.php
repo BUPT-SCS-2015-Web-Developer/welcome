@@ -1,6 +1,27 @@
 <?php
 error_reporting(0);
 
+$isoff = true;
+
+if($isoff == true){ ?>
+    <html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport"
+              content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+    <script>
+        alert('信息登记通道被关闭，请等待易班实名认证开放后，再进行登记！');
+        document.location = 'index.php';
+    </script>
+    </body>
+    </html>
+<?php
+    exit;
+}
+
 include ('backend/header_api_session.php');
 include ('backend/iapp.php');
 
