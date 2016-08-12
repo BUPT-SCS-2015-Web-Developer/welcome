@@ -362,9 +362,29 @@ and (min-width : 1824px) {
 @media only screen
 and (min-device-width : 320px)
 and (max-device-width : 568px) {
-/* STYLES GO HERE */
+
+.calendar td {
+    font-size: x-small;
+    height: 50px;
+    line-height: 40px;
+    width: 40px;
 }
  
+}
+
+@media only screen
+and (min-device-width : 360px)
+and (max-device-width : 568px) {
+
+.calendar td {
+    font-size: x-small;
+    height: 50px;
+    line-height: 50px;
+    width: 50px;
+}
+ 
+}
+
 /* iPhone 5 (landscape)----------- */
 @media only screen
 and (min-device-width : 320px)
