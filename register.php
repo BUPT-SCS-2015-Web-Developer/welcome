@@ -278,32 +278,19 @@ if(!isset($_SESSION['usrid']) or $_SESSION['usrid']=='')
                                 <span class="am-form-caret"></span>
                             </div>
 
-                            <!-- 学院 下拉版
                             <div class="am-form-group">
                               <label for="form1School">学院</label>
-                              <select id="form1School" name="form1School">
-                                <option>信息与通信工程学院</option>
-                                <option>电子工程学院</option>
-                                <option>计算机学院</option>
-                                <option>自动化学院</option>
-                                <option>软件学院</option>
-                                <option>数字媒体与设计艺术学院</option>
-                                <option>理学院</option>
-                                <option>经济管理学院</option>
-                                <option>公共管理学院</option>
+                              <select id="form1School" name="form1School" required>
                               </select>
                               <span class="am-form-caret"></span>
                             </div>
-                            -->
 
-                            <div class="am-form-group">
-                                <label for="form1School">学院</label>
-                                <input type="text" class="" id="form1School" name="form1School" placeholder="请输入所在学院" required>
-                            </div>
 
                             <div class="am-form-group">
                                 <label for="form1Major">专业</label>
-                                <input type="text" class="" id="form1Major" name="form1Major" placeholder="请输入所在专业" required>
+                                <select id="form1Major" name="form1Major" required>
+                                </select>
+                                <span class="am-form-caret"></span>
                             </div>
 
                             <div class="am-form-group">
@@ -877,6 +864,7 @@ if(!isset($_SESSION['usrid']) or $_SESSION['usrid']=='')
 </script>
 <script src="buptYB/js/nav.js"></script>
 <script src="buptYB/js/easter_egg.js"></script>
+<script src="buptYB/js/register.js"></script>
 
 <script>
 
