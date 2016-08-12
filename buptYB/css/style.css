@@ -83,6 +83,33 @@ ul {
     left:0;
   }
 }
+@media only screen and (max-width: 640px){
+  #the-box .bg{position: fixed;
+   height: 100%;
+   width:auto;
+   right:0;
+   left:auto;
+}
+  .my-article{
+    padding: 10px;
+    position: absolute;
+    width:100%;
+    left:0;
+  }
+}
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 750px)
+and (orientation : landscape){
+  #the-box .bg{
+    position: fixed;
+    height: 120%;
+    width:auto;
+    right:0;
+    left:auto;
+  }
+}
+
 #the-box{
   position: relative;
  	width: 100%;
