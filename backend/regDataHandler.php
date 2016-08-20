@@ -178,4 +178,4 @@ try {
 }
 //*/
 //header('Location: /register.php?type='.($_GET['formid'] < 3) ? ($_GET['formid'] + 1) : '3');
-echo "<script language='javascript'>document.location = '../register.php?type=".(($_GET['formid'] < 3) ? ($_GET['formid'] + 1) : '3')."';</script>";
+echo "<script language='javascript'>document.location = '../register.php?type=".$_GET['formid']."';</script>";
