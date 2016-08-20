@@ -285,14 +285,17 @@ if(!isset($_SESSION['usrid']) or $_SESSION['usrid']=='')
 
                             <div class="am-form-group">
                               <label for="form1School">学院</label>
-                              <input type="text" class="" id="form1School" name="form1School" placeholder="请填写学院" required>
+                              <select id="form1School" name="form1School" required></select>
+                              <!-- <input type="text" class="" id="form1School" name="form1School" placeholder="请填写学院" required> -->
                               <span class="am-form-caret"></span>
                             </div>
 
 
                             <div class="am-form-group">
                                 <label for="form1Major">专业</label>
-                                <input type="text" class="" id="form1Major" name="form1Major" placeholder="请填写专业" required>
+                                <select id="form1Major" name="form1Major" required></select>
+                                <!--
+                                <input type="text" class="" id="form1Major" name="form1Major" placeholder="请填写专业" required> -->
                                 <span class="am-form-caret"></span>
                             </div>
 
@@ -870,28 +873,11 @@ if(!isset($_SESSION['usrid']) or $_SESSION['usrid']=='')
 </script>
 <script src="buptYB/js/nav.js"></script>
 <script src="buptYB/js/easter_egg.js"></script>
-
+<script src="buptYB/js/register.js"></script>
+    
 <script>
 
-    $.getJSON("backend/regDataQuery.php",function (data) {
-        $.each(data, function(key, value){
-            var $ctrl = $('[name='+key+']');
-            switch($ctrl.attr("type"))
-            {
-                case "text" :
-                case "hidden":
-                    $ctrl.val(value);
-                    break;
-                case "radio" : case "checkbox":
-                $ctrl.each(function(){
-                    if(value == "yes") { $(this).attr("checked","on"); }});
-                    //if($(this).attr('value') == value) {  $(this).attr("checked",value); } });
-                break;
-                default:
-                    $ctrl.val(value);
-            }
-        });
-    });
+    
 
     $(function () {
         var $_GET = (function () {

@@ -208,11 +208,14 @@ include('backend/iapp.php');
         window.onresize = function () {
             // adjust();
         };
+        /* 因为不同浏览器要求取消cookies判断
         if (!(Cookies.get('form1') || Cookies.get('form2') || Cookies.get('form3') )) {
             $("#pStatus").html("您尚未登记信息，请前往<a href='register.php'>此处</a>登记");
         } else {
             $("#pStatus").html(pString("基本信息", Cookies.get('form1'), 1) + pString("家庭信息", Cookies.get('form2'), 2) + pString("军训服装", Cookies.get('form3'), 3));
-        }
+        }*/
+        
+         $("#pStatus").html("记得登记信息哦!");
     });
 
 

@@ -43,7 +43,7 @@ $(function(){
         if (name == "请选择") schoolS.append("<option selected disabled>"+name+"</option>");
         else schoolS.append("<option>"+name+"</option>");
                        });
-    schoolS.change(function(){
+    var majorChange = function(){
         $.each(majorset,function(n,v){
             if (schoolS.val() == n) {
                 majorS.text("");
@@ -53,13 +53,28 @@ $(function(){
                 }
             }
                                   });
-    });
-    $.each(majorset,function(n,v){
-            if (schoolS.val() == n) {
-                majorS.text("");
-                for (x in v) {
-                    majorS.append("<option>"+v[x]+"</option>");
-                }
+        };
+    
+    $.getJSON("backend/regDataQuery.php",function (data) {
+        $.each(data, function(key, value){
+            var $ctrl = $('[name='+key+']');
+            switch($ctrl.attr("type"))
+            {
+                case "text" :
+                case "hidden":
+                    $ctrl.val(value);
+                    break;
+                case "radio" : case "checkbox":
+                $ctrl.each(function(){
+                    if(value == "yes") { $(this).attr("checked","on"); }});
+                    //if($(this).attr('value') == value) {  $(this).attr("checked",value); } });
+                break;
+                default:
+                    $ctrl.val(value);
             }
-                                  });
+        });
+    });
+    
+    schoolS.on('change',majorChange);
+    majorChange();
 });
