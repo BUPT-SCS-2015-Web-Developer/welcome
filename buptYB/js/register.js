@@ -37,6 +37,7 @@ var majorset = {
         "信息光子学与光通信研究院" : ["光学工程","电子科学与技术","信息与通信工程","电子与通信工程"]
     }
 $(function(){
+    window.rewriteOK = 0;
     var schoolS = $("#form1School");
     var majorS = $("#form1Major");
     $.each(majorset,function(name,value){
@@ -44,17 +45,18 @@ $(function(){
         else schoolS.append("<option>"+name+"</option>");
                        });
     var majorChange = function(){
-        $.each(majorset,function(n,v){
-            if (schoolS.val() == n) {
-                majorS.text("");
-                majorS.append("<option selected disabled>请选择您所在专业</option>");
-                for (x in v) {
-                    majorS.append("<option>"+v[x]+"</option>");
+        if (window.rewriteOK==1) {
+            $.each(majorset,function(n,v){
+                if (schoolS.val() == n) {
+                    majorS.text("");
+                    majorS.append("<option selected disabled>请选择您所在专业</option>");
+                    for (x in v) {
+                        majorS.append("<option>"+v[x]+"</option>");
+                    }
                 }
-            }
-                                  });
-        };
-    
+                            });
+        }
+     };
     $.getJSON("backend/regDataQuery.php",function (data) {
         $.each(data, function(key, value){
             var $ctrl = $('[name='+key+']');
@@ -73,6 +75,7 @@ $(function(){
                     $ctrl.val(value);
             }
         });
+        window.rewriteOK = 1;
     });
     
     schoolS.on('change',majorChange);
