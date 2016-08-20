@@ -1,7 +1,7 @@
 <?php
 error_reporting(0);
 
-$isoff = true;
+$isoff = false;
 
 if($isoff == true and !isset($_COOKIE['debug'])){ ?>
     <html>
