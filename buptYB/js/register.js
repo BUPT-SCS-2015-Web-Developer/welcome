@@ -45,7 +45,6 @@ $(function(){
         else schoolS.append("<option>"+name+"</option>");
                        });
     var majorChange = function(){
-        if (window.rewriteOK==1) {
             $.each(majorset,function(n,v){
                 if (schoolS.val() == n) {
                     majorS.text("");
@@ -55,7 +54,7 @@ $(function(){
                     }
                 }
                             });
-        }
+        
      };
     $.getJSON("backend/regDataQuery.php",function (data) {
         $.each(data, function(key, value){
@@ -75,9 +74,13 @@ $(function(){
                     $ctrl.val(value);
             }
         });
-        window.rewriteOK = 1;
     });
     
     schoolS.on('change',majorChange);
     majorChange();
+    
+    $.getJSON("backend/regDataQuery.php",function (data) {
+        var $ctrl = $('#form1Major');
+        $ctrl.val(data['form1Major']);
+    });
 });
