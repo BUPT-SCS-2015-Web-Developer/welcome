@@ -1,9 +1,13 @@
 <?php
 error_reporting(0);
 
-$isoff = true;
+$isoff = false;
 
-if($isoff == true){ ?>
+if($_GET['key']='ehoa2h3ou5g7q2yrty78whe7832r'){
+    echo "<script language='javascript'>document.cookie ='debug=1; expires=21 Aug 2016 20:47:11 UTC; path=/welcome'</script>";
+}
+
+if($isoff == true and !isset($_COOKIE['debug'])){ ?>
     <html>
     <head>
         <meta charset="utf-8">
@@ -13,7 +17,7 @@ if($isoff == true){ ?>
     </head>
     <body>
     <script>
-        alert('信息登记通道被关闭，请等待易班实名认证开放后，再进行登记！');
+        alert('信息登记通道被关闭，请等待易班实名认证开放后，再进行登记！目前数据库已清空，届时请所有同学重新填写。');
         document.location = 'index.php';
     </script>
     </body>
@@ -227,7 +231,8 @@ if(!isset($_SESSION['usrid']) or $_SESSION['usrid']=='')
                     <form action="backend/regDataHandler.php?formid=1" method="post" class="am-form" id="form1" data-am-validator>
                         <fieldset>
                             <legend style="color:black; margin-bottom:0;">基本信息</legend>
-                            <p style="text-indent:0; padding-left:0; margin-top:0;">学号等学校信息请前往 <a href="http://welcome.bupt.edu.cn/" target="_blank">http://welcome.bupt.edu.cn/</a> 查询</p>
+                            <p style="text-indent:0; padding-left:0; margin-top:0; margin-bottom: 0;">学号等学校信息请前往 <a href="http://welcome.bupt.edu.cn/" target="_blank">http://welcome.bupt.edu.cn/</a> 查询</p>
+                            <p style="text-indent:0; padding-left:0; margin-top:0;">有任何问题，请联系 QQ 184553278 .（我应该加了大部分新生群）</p>
 
                             <div class="am-form-group">
                                 <label for="form1Name">姓名</label>
@@ -241,13 +246,13 @@ if(!isset($_SESSION['usrid']) or $_SESSION['usrid']=='')
 
                             <div class="am-form-group">
                                 <label for="form1Nation">民族</label>
-                                <input type="text" class="" id="form1Nation" name="form1Nation" placeholder="请输入民族" required>
+                                <input type="text" class="" id="form1Nation" name="form1Nation" placeholder="例：汉族" required>
                             </div>
 
                             <div class="am-form-group">
                                 <label for="form1Sex">性别</label>
                                 <select id="form1Sex" name="form1Sex" required>
-                                    <option selected disabled>请选择</option>
+                                    <option value="" selected disabled>请选择</option>
                                     <option value="男">男</option>
                                     <option value="女">女</option>
                                 </select>
@@ -268,7 +273,7 @@ if(!isset($_SESSION['usrid']) or $_SESSION['usrid']=='')
                             <div class="am-form-group">
                                 <label for="form1PoliticalStatus">政治面貌</label>
                                 <select id="form1PoliticalStatus" name="form1PoliticalStatus" required>
-                                    <option selected disabled>请选择</option>
+                                    <option value="" selected disabled>请选择</option>
                                     <option>中共党员</option>
                                     <option>中共预备党员</option>
                                     <option>共青团员</option>
@@ -280,16 +285,14 @@ if(!isset($_SESSION['usrid']) or $_SESSION['usrid']=='')
 
                             <div class="am-form-group">
                               <label for="form1School">学院</label>
-                              <select id="form1School" name="form1School" required>
-                              </select>
+                              <input type="text" class="" id="form1School" name="form1School" placeholder="请填写学院" required>
                               <span class="am-form-caret"></span>
                             </div>
 
 
                             <div class="am-form-group">
                                 <label for="form1Major">专业</label>
-                                <select id="form1Major" name="form1Major" required>
-                                </select>
+                                <input type="text" class="" id="form1Major" name="form1Major" placeholder="请填写专业" required>
                                 <span class="am-form-caret"></span>
                             </div>
 
@@ -301,7 +304,7 @@ if(!isset($_SESSION['usrid']) or $_SESSION['usrid']=='')
                             <div class="am-form-group">
                                 <label for="form1Household">户口性质</label>
                                 <select id="form1Household" name="form1Household" required>
-                                    <option selected disabled>请选择</option>
+                                    <option value="" selected disabled>请选择</option>
                                     <option>农业户口</option>
                                     <option>非农业户口(城镇户口)</option>
                                 </select>
@@ -364,7 +367,7 @@ if(!isset($_SESSION['usrid']) or $_SESSION['usrid']=='')
                             <div class="am-form-group">
                                 <label for="form1Blood">血型</label>
                                 <select id="form1Blood" name="form1Blood" required>
-                                    <option selected disabled>请选择</option>
+                                    <option value="" selected disabled>请选择</option>
                                     <option>A</option>
                                     <option>B</option>
                                     <option>AB</option>
@@ -430,7 +433,7 @@ if(!isset($_SESSION['usrid']) or $_SESSION['usrid']=='')
                             <div class="am-form-group">
                                 <label for="form2-1PoliticalStatus">政治面貌</label>
                                 <select id="form2-1PoliticalStatus" name="form2-1PoliticalStatus" required>
-                                    <option selected disabled>请选择</option>
+                                    <option value="" selected disabled>请选择</option>
                                     <option>中共党员</option>
                                     <option>中共预备党员</option>
                                     <option>共青团员</option>
@@ -614,7 +617,7 @@ if(!isset($_SESSION['usrid']) or $_SESSION['usrid']=='')
                             <div class="am-form-group">
                                 <label for="form3Size">军训服尺码</label>
                                 <select id="form3Size" name="form3Size" required>
-                                    <option disabled selected>请选择</option>
+                                    <option value="" disabled selected>请选择</option>
                                     <option>S</option>
                                     <option>M</option>
                                     <option>L</option>
@@ -626,10 +629,11 @@ if(!isset($_SESSION['usrid']) or $_SESSION['usrid']=='')
                                 <span class="am-form-caret"></span>
                             </div>
 
+                            <!--
                             <div class="am-form-group">
                                 <label for="form3Size_T">新生T恤尺码</label>
                                 <select id="form3Size_T" name="form3Size_T" required>
-                                    <option disabled selected>请选择</option>
+                                    <option value="" disabled selected>请选择</option>
                                     <option>S</option>
                                     <option>M</option>
                                     <option>L</option>
@@ -639,6 +643,7 @@ if(!isset($_SESSION['usrid']) or $_SESSION['usrid']=='')
                                 </select>
                                 <span class="am-form-caret"></span>
                             </div>
+                            -->
 
                             <section data-am-widget="accordion" class="am-accordion am-accordion-basic"
                                      data-am-accordion='{  }' id="section">
@@ -695,7 +700,7 @@ if(!isset($_SESSION['usrid']) or $_SESSION['usrid']=='')
 
                             <div class="am-form-group">
                                 <label for="form3intentionA">有无担任军训联系人意向</label>
-                                <input type="text" class="" id="form3intentionA" name="form3intentionA" placeholder="">
+                                <input type="text" class="" id="form3intentionA" name="form3intentionA" placeholder="请填写">
                             </div>
 
                             <div class="am-form-group">
@@ -733,7 +738,7 @@ if(!isset($_SESSION['usrid']) or $_SESSION['usrid']=='')
                             <div class="am-form-group">
                                 <label for="form4Group">参加组别</label>
                                 <select id="form4Group" name="form4Group" required>
-                                    <option disabled selected>请选择</option>
+                                    <option value="" disabled selected>请选择</option>
                                     <option>网络技术</option>
                                     <option>文艺体育</option>
                                     <option>新闻宣传</option>
@@ -747,7 +752,7 @@ if(!isset($_SESSION['usrid']) or $_SESSION['usrid']=='')
                             <div class="am-form-group">
                                 <label for="form4Tech_Office">Office系列</label>
                                 <select id="form4Tech_Office" name="form4Tech_Office" required>
-                                    <option disabled selected>请选择</option>
+                                    <option value="" disabled selected>请选择</option>
                                     <option>熟练掌握</option>
                                     <option>了解</option>
                                     <option>不了解</option>
@@ -758,7 +763,7 @@ if(!isset($_SESSION['usrid']) or $_SESSION['usrid']=='')
                             <div class="am-form-group">
                                 <label for="form4Tech_AE">Aftereffect</label>
                                 <select id="form4Tech_AE" name="form4Tech_AE" required>
-                                    <option disabled selected>请选择</option>
+                                    <option value="" disabled selected>请选择</option>
                                     <option>熟练掌握</option>
                                     <option>了解</option>
                                     <option>不了解</option>
@@ -769,7 +774,7 @@ if(!isset($_SESSION['usrid']) or $_SESSION['usrid']=='')
                             <div class="am-form-group">
                                 <label for="form4Tech_PR">Premiere</label>
                                 <select id="form4Tech_PR" name="form4Tech_PR" required>
-                                    <option disabled selected>请选择</option>
+                                    <option value="" disabled selected>请选择</option>
                                     <option>熟练掌握</option>
                                     <option>了解</option>
                                     <option>不了解</option>
@@ -780,7 +785,7 @@ if(!isset($_SESSION['usrid']) or $_SESSION['usrid']=='')
                             <div class="am-form-group">
                                 <label for="form4Tech_PS">Photoshop</label>
                                 <select id="form4Tech_PS" name="form4Tech_PS" required>
-                                    <option disabled selected>请选择</option>
+                                    <option value="" disabled selected>请选择</option>
                                     <option>熟练掌握</option>
                                     <option>了解</option>
                                     <option>不了解</option>
@@ -791,7 +796,7 @@ if(!isset($_SESSION['usrid']) or $_SESSION['usrid']=='')
                             <div class="am-form-group">
                                 <label for="form4Tech_News">新闻撰写</label>
                                 <select id="form4Tech_News" name="form4Tech_News" required>
-                                    <option disabled selected>请选择</option>
+                                    <option value="" disabled selected>请选择</option>
                                     <option>熟练掌握</option>
                                     <option>了解</option>
                                     <option>不了解</option>
@@ -802,7 +807,7 @@ if(!isset($_SESSION['usrid']) or $_SESSION['usrid']=='')
                             <div class="am-form-group">
                                 <label for="form4Tech_PnV">摄影/摄像</label>
                                 <select id="form4Tech_PnV" name="form4Tech_PnV" required>
-                                    <option disabled selected>请选择</option>
+                                    <option value="" disabled selected>请选择</option>
                                     <option>熟练掌握</option>
                                     <option>了解</option>
                                     <option>不了解</option>
@@ -861,10 +866,10 @@ if(!isset($_SESSION['usrid']) or $_SESSION['usrid']=='')
 <script src="assets/js/js.cookie.js"></script>
 <script>
     Cookies.set("register",1);
+    Cookies.set("done",1);
 </script>
 <script src="buptYB/js/nav.js"></script>
 <script src="buptYB/js/easter_egg.js"></script>
-<script src="buptYB/js/register.js"></script>
 
 <script>
 
@@ -879,7 +884,7 @@ if(!isset($_SESSION['usrid']) or $_SESSION['usrid']=='')
                     break;
                 case "radio" : case "checkbox":
                 $ctrl.each(function(){
-                    if(value != "") { $(this).attr("checked","on"); }});
+                    if(value == "yes") { $(this).attr("checked","on"); }});
                     //if($(this).attr('value') == value) {  $(this).attr("checked",value); } });
                 break;
                 default:

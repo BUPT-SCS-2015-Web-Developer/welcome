@@ -6,6 +6,11 @@
  * Time: 19:54
  */
 error_reporting(0);
+$ref = $_SERVER['HTTP_REFERER'];
+if (strpos($ref, 'yiban.bupt.edu.cn') === FALSE) {
+    header('Location:../index.php');
+    exit;
+}
 include ('header_api_session.php');
 include ('iapp.php');
 include ('db_config.php');
@@ -71,7 +76,7 @@ switch ($_GET['formid'])
             'form1PhoneNumber'	=>	$_POST['form1PhoneNumber'],
             'form1QQ'	=>	$_POST['form1QQ'],
             'form1Hobby'	=>	$_POST['form1Hobby'],
-            'form1Poverty' => (isset($_POST['form1Poverty']) ? 'yes' : ''),
+            'form1Poverty' => (isset($_POST['form1Poverty']) ? 'yes' : 'no'),
             'form1Income'	=>	$_POST['form1Income'],
             'form1Blood'	=>	$_POST['form1Blood'],
             'form1Allergy'	=>	$_POST['form1Allergy'],
@@ -86,7 +91,7 @@ switch ($_GET['formid'])
         $data = [
             'form2-1Name'	=>	$_POST['form2-1Name'],
             'form2-1Relationship'	=>	$_POST['form2-1Relationship'],
-            'form2-1PoliticalStatus'	=>	$_POST['form2-1PoliticalStatus'],
+            'form2-1PoliticalStatus'	=>	isset($_POST['form2-1PoliticalStatus']) ? $_POST['form2-1PoliticalStatus'] : "",
             'form2-1ID'	=>	$_POST['form2-1ID'],
             'form2-1Workplace'	=>	$_POST['form2-1Workplace'],
             'form2-1MobileNumber'	=>	$_POST['form2-1MobileNumber'],
@@ -95,7 +100,7 @@ switch ($_GET['formid'])
             'form2-1Address'	=>	$_POST['form2-1Address'],
             'form2-2Name'	=>	$_POST['form2-2Name'],
             'form2-2Relationship'	=>	$_POST['form2-2Relationship'],
-            'form2-2PoliticalStatus'	=>	$_POST['form2-2PoliticalStatus'],
+            'form2-2PoliticalStatus'	=>	isset($_POST['form2-2PoliticalStatus']) ? $_POST['form2-2PoliticalStatus'] : "",
             'form2-2ID'	=>	$_POST['form2-2ID'],
             'form2-2Workplace'	=>	$_POST['form2-2Workplace'],
             'form2-2MobileNumber'	=>	$_POST['form2-2MobileNumber'],
@@ -104,7 +109,7 @@ switch ($_GET['formid'])
             'form2-2Address'	=>	$_POST['form2-2Address'],
             'form2-3Name'	=>	$_POST['form2-3Name'],
             'form2-3Relationship'	=>	$_POST['form2-3Relationship'],
-            'form2-3PoliticalStatus'	=>	$_POST['form2-3PoliticalStatus'],
+            'form2-3PoliticalStatus'	=>	isset($_POST['form2-3PoliticalStatus']) ? $_POST['form2-3PoliticalStatus'] : "",
             'form2-3ID'	=>	$_POST['form2-3ID'],
             'form2-3Workplace'	=>	$_POST['form2-3Workplace'],
             'form2-3MobileNumber'	=>	$_POST['form2-3MobileNumber'],
@@ -117,7 +122,7 @@ switch ($_GET['formid'])
     case 3:
         $data = [
             'form3Size'	=>	$_POST['form3Size'],
-            'form3Size_T'	=>	$_POST['form3Size_T'],
+            //'form3Size_T'	=>	$_POST['form3Size_T'],
             'form3Shoe'	=>	$_POST['form3Shoe'],
             'form3intentionA'	=>	$_POST['form3intentionA'],
             'form3intentionB'	=>	$_POST['form3intentionB'],
@@ -163,11 +168,12 @@ try {
         }
         $sql = substr($sql, 0, -1)." WHERE YBUID = ".$data['YBUID']; // remove last , and add sth
     }
+    //echo $sql;
     $q = $DBH->prepare($sql);
     $q->execute($values);
     //var_dump($q);
 } catch (PDOException $e) {
-    print "Error!: " . $e->getMessage() . "<br/>";
+    //print "Error!: " . $e->getMessage() . "<br/>";
     die();
 }
 //*/

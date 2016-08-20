@@ -6,6 +6,11 @@
  * Time: 5:42
  */
 error_reporting(0);
+$ref = $_SERVER['HTTP_REFERER'];
+if (strpos($ref, 'yiban.bupt.edu.cn') === FALSE) {
+    header('Location:../index.php');
+    exit;
+}
 include ('header_api_session.php');
 include ('iapp.php');
 include ('db_config.php');
