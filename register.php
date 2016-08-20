@@ -228,7 +228,7 @@ if(!isset($_SESSION['usrid']) or $_SESSION['usrid']=='')
                         <fieldset>
                             <legend style="color:black; margin-bottom:0;">基本信息</legend>
                             <p style="text-indent:0; padding-left:0; margin-top:0; margin-bottom: 0;">学号等学校信息请前往 <a href="http://welcome.bupt.edu.cn/" target="_blank">http://welcome.bupt.edu.cn/</a> 查询</p>
-                            <p style="text-indent:0; padding-left:0; margin-top:0;">有任何问题，请联系 QQ 184553278 .（我应该加了大部分新生群）</p>
+                            <p style="text-indent:0; padding-left:0; margin-top:0;">有任何问题，请联系 QQ 1010086485</p>
 
                             <div class="am-form-group">
                                 <label for="form1Name">姓名</label>
