@@ -74,6 +74,7 @@ $(function(){
                     $ctrl.val(value);
             }
         });
+        window.majorChange();
     });
     
     schoolS.on('change',majorChange);
