@@ -197,11 +197,12 @@ include('backend/iapp.php');
         else return "<p>您尚未完成" + a + "的登记,请前往<a href='register.php?type=" + c + "'>此处</a>登记";
     }
     $(function () {
-        if (Cookies.get('version') != '20160812') {
+        if (Cookies.get('version') != '20160821') {
             Cookies.remove('form1');
             Cookies.remove('form2');
             Cookies.remove('form3');
-            Cookies.set("version", '20160812');
+            Cookies.remove('debug');
+            Cookies.set("version", '20160821');
         }
 
         // adjust();
@@ -215,7 +216,7 @@ include('backend/iapp.php');
             $("#pStatus").html(pString("基本信息", Cookies.get('form1'), 1) + pString("家庭信息", Cookies.get('form2'), 2) + pString("军训服装", Cookies.get('form3'), 3));
         }*/
         
-         $("#pStatus").html("记得登记信息哦!");
+         $("#pStatus").html("记得登记信息哦!填写完自动刷新，如果数据都在才是填写成功哦~");
     });
 
 
