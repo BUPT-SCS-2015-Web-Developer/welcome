@@ -28,7 +28,7 @@ try{
     //echo $YBUID;
     $data = $stmt->fetch(PDO::FETCH_ASSOC);
 } catch (PDOException $e) {
-    print "Error!: " . $e->getMessage() . "<br/>";
+    print 'Database Error. Please contact supporter!';
     die();
 }
 

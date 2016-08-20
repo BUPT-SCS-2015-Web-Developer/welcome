@@ -20,7 +20,7 @@ try{
     $DBH = new PDO("mysql:host=$db_host;dbname=$db_database;", $db_username, $db_password,
         array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
 } catch (PDOException $e) {
-    print "Error!: " . $e->getMessage() . "<br/>";
+    print 'Database Error. Please contact supporter!';
     die();
 }
 
@@ -43,7 +43,7 @@ function isexist(PDO $DBH, $YBUID)
         $stmt->execute([$YBUID]);
         $user = $stmt->fetch();
     } catch (PDOException $e) {
-        print "Error!: " . $e->getMessage() . "<br/>";
+        print 'Database Error. Please contact supporter!';
         die();
     }
     return $user;
@@ -173,7 +173,7 @@ try {
     $q->execute($values);
     //var_dump($q);
 } catch (PDOException $e) {
-    //print "Error!: " . $e->getMessage() . "<br/>";
+    print 'Database Error. Please contact supporter!';
     die();
 }
 //*/
