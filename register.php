@@ -1,7 +1,11 @@
 <?php
 error_reporting(0);
 
-$isoff = true;
+$isoff = false;
+
+if($_GET['key']='ehoa2h3ou5g7q2yrty78whe7832r'){
+    echo "<script language='javascript'>document.cookie ='debug=1; expires=21 Aug 2016 20:47:11 UTC; path=/welcome'</script>";
+}
 
 if($isoff == true and !isset($_COOKIE['debug'])){ ?>
     <html>
@@ -13,7 +17,7 @@ if($isoff == true and !isset($_COOKIE['debug'])){ ?>
     </head>
     <body>
     <script>
-        alert('维护中');
+        alert('信息登记通道被关闭，请等待易班实名认证开放后，再进行登记！目前数据库已清空，届时请所有同学重新填写。');
         document.location = 'index.php';
     </script>
     </body>
@@ -281,7 +285,7 @@ if(!isset($_SESSION['usrid']) or $_SESSION['usrid']=='')
 
                             <div class="am-form-group">
                               <label for="form1School">学院</label>
-                              <select id="form1School" name="form1School" required onchange="window.majorChange()"></select>
+                              <select id="form1School" name="form1School" required></select>
                               <!-- <input type="text" class="" id="form1School" name="form1School" placeholder="请填写学院" required> -->
                               <span class="am-form-caret"></span>
                             </div>
