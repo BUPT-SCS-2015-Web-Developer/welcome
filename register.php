@@ -228,8 +228,8 @@ if(!isset($_SESSION['usrid']) or $_SESSION['usrid']=='')
                         <fieldset>
                             <legend style="color:black; margin-bottom:0;">基本信息</legend>
                             <p style="text-indent:0; padding-left:0; margin-top:0; margin-bottom: 0;">学号等学校信息请前往 <a href="http://welcome.bupt.edu.cn/" target="_blank">http://welcome.bupt.edu.cn/</a> 查询</p>
-                            <p style="text-indent:0; padding-left:0; margin-top:0; margin-bottom: 0;">提交后自动刷新，信息全部存在，则提交成功</p>
-                            <p style="text-indent:0; padding-left:0; margin-top:0;">有任何问题，请联系 QQ 1010086485</p>
+                            <p style="text-indent:0; padding-left:0; margin-top:0; margin-bottom: 0;">提交后自动刷新，若信息全部存在，则提交成功</p>
+                            <p style="text-indent:0; padding-left:0; margin-top:0;">在这里查看<a href="http://note.youdao.com/share/?id=c4ae0be8cb0b83b268be622a52ecd877&type=note#/">常见问题解决方案</a>，如不能解决，请加客服群238848071报告问题</p>
 
                             <div class="am-form-group">
                                 <label for="form1Name">姓名</label>
