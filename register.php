@@ -233,17 +233,17 @@ if(!isset($_SESSION['usrid']) or $_SESSION['usrid']=='')
 
                             <div class="am-form-group">
                                 <label for="form1Name">姓名</label>
-                                <input type="text" class="" id="form1Name" name="form1Name" placeholder="请输入姓名" required>
+                                <input type="text" class="" id="form1Name" name="form1Name"  maxlength="20" placeholder="请输入姓名" required>
                             </div>
 
                             <div class="am-form-group">
                                 <label for="BUPTID">学号</label>
-                                <input type="text" class="" id="BUPTID" name="BUPTID" placeholder="例: 2015211222" required>
+                                <input type="text" class="" id="BUPTID" name="BUPTID"  maxlength="10" placeholder="例: 2015211222" required>
                             </div>
 
                             <div class="am-form-group">
                                 <label for="form1Nation">民族</label>
-                                <input type="text" class="" id="form1Nation" name="form1Nation" placeholder="例：汉族" required>
+                                <input type="text" class="" id="form1Nation" name="form1Nation"  maxlength="20" placeholder="例：汉族" required>
                             </div>
 
                             <div class="am-form-group">
@@ -258,13 +258,13 @@ if(!isset($_SESSION['usrid']) or $_SESSION['usrid']=='')
 
                             <div class="am-form-group">
                                 <label for="form1ID">身份证号</label>
-                                <input type="text" class="" id="form1ID" name="form1ID" placeholder="请输入18位身份证号" required>
+                                <input type="text"  maxlength="18" class="" id="form1ID" name="form1ID" placeholder="请输入18位身份证号" required>
                             </div>
 
                             <div class="am-form-group">
                                 <label for="form1NativePlace">籍贯</label>
                                 <input type="text" class="" id="form1NativePlace" name="form1NativePlace"
-                                       placeholder="请输入祖籍地" required>
+                                        maxlength="40" placeholder="请输入祖籍地" required>
                             </div>
 
                             <div class="am-form-group">
@@ -298,7 +298,7 @@ if(!isset($_SESSION['usrid']) or $_SESSION['usrid']=='')
 
                             <div class="am-form-group">
                                 <label for="form1Class">班级</label>
-                                <input type="text" class="" id="form1Class" name="form1Class" placeholder="例: 2015211333" required>
+                                <input type="text" class="" id="form1Class" name="form1Class"  maxlength="10" placeholder="例: 2015211333" required>
                             </div>
 
                             <div class="am-form-group">
@@ -321,36 +321,36 @@ if(!isset($_SESSION['usrid']) or $_SESSION['usrid']=='')
                             <div class="am-form-group">
                                 <label for="form1Residing">户口所在地</label>
                                 <input type="text" class="" id="form1Residing" name="form1Residing"
-                                       placeholder="请输入户口所在地" required>
+                                      maxlength="50"   placeholder="请输入户口所在地" required>
                             </div>
 
                             <div class="am-form-group">
                                 <label for="form1Postcode">邮编</label>
                                 <input type="number" class="" id="form1Postcode" name="form1Postcode"
-                                       placeholder="请输入邮政编码" required>
+                                      maxlength="6"   placeholder="请输入邮政编码" required>
                             </div>
 
                             <div class="am-form-group">
                                 <label for="form1Address">家庭详细住址(通讯地址)</label>
                                 <input type="text" class="" id="form1Address" name="form1Address"
-                                       placeholder="请输入家庭详细住址" required>
+                                      maxlength="50"   placeholder="请输入家庭详细住址" required>
                             </div>
 
                             <div class="am-form-group">
                                 <label for="form1PhoneNumber">手机号码</label>
                                 <input type="text" class="" id="form1PhoneNumber" name="form1PhoneNumber"
-                                       placeholder="请输入手机号码" required>
+                                      maxlength="11"   placeholder="请输入手机号码" required>
                             </div>
 
                             <div class="am-form-group">
                                 <label for="form1QQ">QQ号码</label>
-                                <input type="number" class="" id="form1QQ" name="form1QQ" placeholder="请输入QQ号" required>
+                                <input type="number" class="" id="form1QQ" name="form1QQ" maxlength="12" placeholder="请输入QQ号" required>
                             </div>
 
                             <div class="am-form-group">
                                 <label for="form1Hobby">兴趣爱好</label>
                                 <textarea class="" rows="6" id="form1Hobby" name="form1Hobby"
-                                          placeholder="请输入兴趣爱好" required></textarea>
+                                          maxlength="200"  placeholder="请输入兴趣爱好" required></textarea>
                             </div>
 
                             <div class="am-checkbox">
@@ -361,7 +361,7 @@ if(!isset($_SESSION['usrid']) or $_SESSION['usrid']=='')
 
                             <div class="am-form-group">
                                 <label for="form1Income">家庭月收入</label>
-                                <input type="text" class="" id="form1Income" name="form1Income" placeholder="请输入家庭月收入" required>
+                                <input type="text" class="" id="form1Income" name="form1Income"  maxlength="20" placeholder="请输入家庭月收入" required>
                             </div>
 
                             <div class="am-form-group">
@@ -380,26 +380,26 @@ if(!isset($_SESSION['usrid']) or $_SESSION['usrid']=='')
                             <div class="am-form-group">
                                 <label for="form1Allergy">过敏病史</label>
                                 <input type="text" class="" id="form1Allergy" name="form1Allergy"
-                                       placeholder="请输入过敏病史(如无则不填)">
+                                       maxlength="50"  placeholder="请输入过敏病史(如无则不填)">
                             </div>
 
                             <div class="am-form-group">
                                 <label for="form1Allergen">过敏原</label>
                                 <input type="text" class="" id="form1Allergen" name="form1Allergen"
-                                       placeholder="请输入过敏原(如无则不填)">
+                                       maxlength="50"  placeholder="请输入过敏原(如无则不填)">
                             </div>
 
                             <div class="am-form-group">
                                 <label for="form1MedicalHistory">既往病史</label>
                                 <textarea class="" rows="4" id="form1MedicalHistory" name="form1MedicalHistory"
-                                          placeholder="请输入既往病史(本项保密，请如实填写相关信息)"></textarea>
+                                          maxlength="200"  placeholder="请输入既往病史(本项保密，请如实填写相关信息)"></textarea>
                                 <span class="am-form-caret">本项保密，请如实填写相关信息</span>
                             </div>
 
                             <div class="am-form-group">
                                 <label for="form1Special">特殊要求请备注</label>
                                 <textarea class="" rows="5" id="form1Special" name="form1Special"
-                                          placeholder="特殊要求"></textarea>
+                                          maxlength="400"  placeholder="特殊要求"></textarea>
                             </div>
 
                             <p>
@@ -421,13 +421,13 @@ if(!isset($_SESSION['usrid']) or $_SESSION['usrid']=='')
                             <hr>
                             <div class="am-form-group">
                                 <label for="form2-1Name">姓名</label>
-                                <input type="text" class="" id="form2-1Name" name="form2-1Name" placeholder="输入亲属姓名" required>
+                                <input type="text" class="" id="form2-1Name" name="form2-1Name"  maxlength="20" placeholder="输入亲属姓名" required>
                             </div>
 
                             <div class="am-form-group">
                                 <label for="form2-1Relationship">与本人关系</label>
                                 <input type="text" class="" id="form2-1Relationship" name="form2-1Relationship"
-                                       placeholder="输入亲属与本人关系" required>
+                                       maxlength="20"  placeholder="输入亲属与本人关系" required>
                             </div>
 
                             <div class="am-form-group">
@@ -445,50 +445,49 @@ if(!isset($_SESSION['usrid']) or $_SESSION['usrid']=='')
 
                             <div class="am-form-group">
                                 <label for="form2-1ID">身份证号</label>
-                                <input type="text" class="" id="form2-1ID" name="form2-1ID" placeholder="请输入18位身份证号" >
+                                <input type="text" class="" id="form2-1ID" name="form2-1ID"  maxlength="18" placeholder="请输入18位身份证号" >
                             </div>
 
                             <div class="am-form-group">
                                 <label for="form2-1Workplace">工作单位</label>
                                 <input type="text" class="" id="form2-1Workplace" name="form2-1Workplace"
-                                       placeholder="请输入亲属工作单位" required>
+                                      maxlength="40"   placeholder="请输入亲属工作单位" required>
                             </div>
 
                             <div class="am-form-group">
                                 <label for="form2-1MobileNumber">移动电话</label>
                                 <input type="text" class="" id="form2-1MobileNumber" name="form2-1MobileNumber"
-                                       placeholder="请输入亲属移动电话号码" required>
+                                       maxlength="20"  placeholder="请输入亲属移动电话号码" required>
                             </div>
 
                             <div class="am-form-group">
                                 <label for="form2-1Landline">固定电话</label>
                                 <input type="text" class="" id="form2-1Landline" name="form2-1Landline"
-                                       placeholder="请输入亲属固定电话号码">
+                                       maxlength="20"  placeholder="请输入亲属固定电话号码">
                             </div>
 
                             <div class="am-form-group">
                                 <label for="form2-1Postcode">通讯邮编</label>
                                 <input type="number" class="" id="form2-1Postcode" name="form2-1Postcode"
-                                       placeholder="请输入亲属通讯邮政编码">
+                                       maxlength="6"  placeholder="请输入亲属通讯邮政编码">
                             </div>
 
                             <div class="am-form-group">
                                 <label for="form2-1Address">通讯地址</label>
                                 <input type="text" class="" id="form2-1Address" name="form2-1Address"
-                                       placeholder="请输入亲属通讯地址" required>
+                                       maxlength="50"  placeholder="请输入亲属通讯地址" required>
                             </div>
 
                             <h2>父母或直系亲属(二)</h2>
                             <hr>
                             <div class="am-form-group">
                                 <label for="form2-2Name">姓名</label>
-                                <input type="text" class="" id="form2-2Name" name="form2-2Name" placeholder="输入亲属姓名">
+                                <input type="text" class="" id="form2-2Name" name="form2-2Name"  maxlength="20" placeholder="输入亲属姓名">
                             </div>
 
                             <div class="am-form-group">
                                 <label for="form2-2Relationship">与本人关系</label>
-                                <input type="text" class="" id="form2-2Relationship" name="form2-2Relationship"
-                                       placeholder="输入亲属与本人关系">
+                                <input type="text" class="" id="form2-2Relationship" name="form2-2Relationship" maxlength="20"   placeholder="输入亲属与本人关系">
                             </div>
 
                             <div class="am-form-group">
@@ -506,50 +505,48 @@ if(!isset($_SESSION['usrid']) or $_SESSION['usrid']=='')
 
                             <div class="am-form-group">
                                 <label for="form2-2ID">身份证号</label>
-                                <input type="text" class="" id="form2-2ID" name="form2-2ID" placeholder="请输入18位身份证号">
+                                <input type="text" class="" id="form2-2ID" name="form2-2ID"  maxlength="18" placeholder="请输入18位身份证号">
                             </div>
 
                             <div class="am-form-group">
                                 <label for="form2-2Workplace">工作单位</label>
                                 <input type="text" class="" id="form2-2Workplace" name="form2-2Workplace"
-                                       placeholder="请输入亲属工作单位">
+                                      maxlength="30"   placeholder="请输入亲属工作单位">
                             </div>
 
                             <div class="am-form-group">
                                 <label for="form2-2MobileNumber">移动电话</label>
-                                <input type="text" class="" id="form2-2MobileNumber" name="form2-2MobileNumber"
-                                       placeholder="请输入亲属移动电话号码">
+                                <input type="text" class="" id="form2-2MobileNumber" name="form2-2MobileNumber" maxlength="20"  placeholder="请输入亲属移动电话号码">
                             </div>
 
                             <div class="am-form-group">
                                 <label for="form2-2Landline">固定电话</label>
                                 <input type="text" class="" id="form2-2Landline" name="form2-2Landline"
-                                       placeholder="请输入亲属固定电话号码">
+                                       maxlength="20"  placeholder="请输入亲属固定电话号码">
                             </div>
 
                             <div class="am-form-group">
                                 <label for="form2-2Postcode">通讯邮编</label>
                                 <input type="number" class="" id="form2-2Postcode" name="form2-2Postcode"
-                                       placeholder="请输入亲属通讯邮政编码">
+                                      maxlength="6"   placeholder="请输入亲属通讯邮政编码">
                             </div>
 
                             <div class="am-form-group">
                                 <label for="form2-2Address">通讯地址</label>
                                 <input type="text" class="" id="form2-2Address" name="form2-2Address"
-                                       placeholder="请输入亲属通讯地址">
+                                       maxlength="50"  placeholder="请输入亲属通讯地址">
                             </div>
 
                             <h2>在京联系人(如无则不填)</h2>
                             <hr>
                             <div class="am-form-group">
                                 <label for="form2-3Name">姓名</label>
-                                <input type="text" class="" id="form2-3Name" name="form2-3Name" placeholder="输入姓名">
+                                <input type="text" class="" id="form2-3Name" name="form2-3Name"  maxlength="20" placeholder="输入姓名">
                             </div>
 
                             <div class="am-form-group">
                                 <label for="form2-3Relationship">与本人关系</label>
-                                <input type="text" class="" id="form2-3Relationship" name="form2-3Relationship"
-                                       placeholder="输入与本人关系">
+                                <input type="text" class="" id="form2-3Relationship" name="form2-3Relationship" maxlength="20" placeholder="输入与本人关系">
                             </div>
 
                             <div class="am-form-group">
@@ -567,37 +564,35 @@ if(!isset($_SESSION['usrid']) or $_SESSION['usrid']=='')
 
                             <div class="am-form-group">
                                 <label for="form2-3ID">身份证号</label>
-                                <input type="text" class="" id="form2-3ID" name="form2-3ID" placeholder="请输入18位身份证号">
+                                <input type="text" class="" id="form2-3ID" name="form2-3ID"  maxlength="18" placeholder="请输入18位身份证号">
                             </div>
 
                             <div class="am-form-group">
                                 <label for="form2-3Workplace">工作单位</label>
-                                <input type="text" class="" id="form2-3Workplace" name="form2-3Workplace"
-                                       placeholder="请输入工作单位">
+                                <input type="text" class="" id="form2-3Workplace" name="form2-3Workplace" maxlength="40"  placeholder="请输入工作单位">
                             </div>
 
                             <div class="am-form-group">
                                 <label for="form2-3MobileNumber">移动电话</label>
-                                <input type="text" class="" id="form2-3MobileNumber" name="form2-3MobileNumber"
-                                       placeholder="请输入移动电话号码">
+                                <input type="text" class="" id="form2-3MobileNumber" name="form2-3MobileNumber" maxlength="20" placeholder="请输入移动电话号码">
                             </div>
 
                             <div class="am-form-group">
                                 <label for="form2-3Landline">固定电话</label>
                                 <input type="text" class="" id="form2-3Landline" name="form2-3Landline"
-                                       placeholder="请输入固定电话号码">
+                                        maxlength="20" placeholder="请输入固定电话号码">
                             </div>
 
                             <div class="am-form-group">
                                 <label for="form2-3Postcode">通讯邮编</label>
                                 <input type="number" class="" id="form2-3Postcode" name="form2-3Postcode"
-                                       placeholder="请输入通讯邮政编码">
+                                        maxlength="6" placeholder="请输入通讯邮政编码">
                             </div>
 
                             <div class="am-form-group">
                                 <label for="form2-3Address">通讯地址</label>
                                 <input type="text" class="" id="form2-3Address" name="form2-3Address"
-                                       placeholder="请输入通讯地址">
+                                        maxlength="50" placeholder="请输入通讯地址">
                             </div>
                             <p>
                                 <button id="form2Submit" type="submit" class="am-btn am-btn-default">提交</button>
@@ -695,23 +690,23 @@ if(!isset($_SESSION['usrid']) or $_SESSION['usrid']=='')
 
                             <div class="am-form-group">
                                 <label for="form3Shoe">鞋码</label>
-                                <input type="number" class="" id="form3Shoe" name="form3Shoe" placeholder="请输入鞋码" required>
+                                <input type="number" class="" id="form3Shoe" name="form3Shoe"  maxlength="20" placeholder="请输入鞋码" required>
                             </div>
 
                             <div class="am-form-group">
                                 <label for="form3intentionA">有无担任军训联系人意向</label>
-                                <input type="text" class="" id="form3intentionA" name="form3intentionA" placeholder="请填写">
+                                <input type="text" class="" id="form3intentionA"  maxlength="100" name="form3intentionA" placeholder="请填写">
                             </div>
 
                             <div class="am-form-group">
                                 <label for="form3intentionB">有无加入大班委意向</label>
-                                <input type="text" class="" id="form3intentionB" name="form3intentionB"
+                                <input type="text" class="" id="form3intentionB"  maxlength="100" name="form3intentionB"
                                        placeholder="如有请填写意向，可多填">
                             </div>
 
                             <div class="am-form-group">
                                 <label for="form3intentionC">有无加入小班委意向</label>
-                                <input type="text" class="" id="form3intentionC" name="form3intentionC"
+                                <input type="text" class="" id="form3intentionC"  maxlength="100" name="form3intentionC"
                                        placeholder="如有请填写意向，可多填">
                                 <span class="am-form-caret">大班委包括：班长，团支书，心理委员，编辑委员，文艺委员，生活委员(男/女)，公关委员，学习委员，科技委员，宣传委员（详情请咨询导员）</span>
                             </div>
@@ -817,25 +812,25 @@ if(!isset($_SESSION['usrid']) or $_SESSION['usrid']=='')
 
                             <div class="am-form-group">
                                 <label for="form4Tech_PnV_Device">接上题：拥有摄影设备型号（上题否定回答 或 无 则留空）</label>
-                                <input type="text" class="" id="form4Tech_PnV_Device" name="form4Tech_PnV_Device" placeholder="例：Cannon 600D">
+                                <input type="text" class="" id="form4Tech_PnV_Device"  maxlength="40" name="form4Tech_PnV_Device" placeholder="例：Cannon 600D">
                             </div>
 
                             <div class="am-form-group">
                                 <label for="form4Tech_Others">其他</label>
                                 <textarea class="" rows="4" id="form4Tech_Others" name="form4Tech_Others"
-                                          placeholder="请填写其他技能"></textarea>
+                                          maxlength="200"  placeholder="请填写其他技能"></textarea>
                             </div>
 
                             <div class="am-form-group">
                                 <label for="form4Exp">相关经验</label>
                                 <textarea class="" rows="6" id="form4Exp" name="form4Exp"
-                                          placeholder="重要！请认真填写！" required></textarea>
+                                          maxlength="1000"  placeholder="重要！请认真填写！" required></textarea>
                             </div>
 
                             <div class="am-form-group">
                                 <label for="form4Intro">自我简介</label>
                                 <textarea class="" rows="8" id="form4Intro" name="form4Intro"
-                                          placeholder="重要！请认真填写！" required></textarea>
+                                          maxlength="700"  placeholder="重要！请认真填写！" required></textarea>
                             </div>
 
                             <p>
