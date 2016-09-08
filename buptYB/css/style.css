@@ -63,14 +63,14 @@ ul {
   width:auto;
 }
 @media only screen and (min-width: 640px){
-  #the-box .bg{
+  #the-box .bg,#container .bg{
         position: fixed;
    height: 100%;
    width:100%;
 }
 }
 @media only screen and (max-width: 640px){
-  #the-box .bg{position: fixed;
+  #the-box .bg,#container .bg{position: fixed;
    height: 100%;
    width:auto;
    right:0;
@@ -84,7 +84,7 @@ ul {
   }
 }
 @media only screen and (max-width: 640px){
-  #the-box .bg{position: fixed;
+  #the-box .bg,#container .bg{position: fixed;
    height: 100%;
    width:auto;
    right:0;
@@ -101,7 +101,7 @@ ul {
 and (min-device-width : 320px)
 and (max-device-width : 750px)
 and (orientation : landscape){
-  #the-box .bg{
+  #the-box .bg,#container .bg{
     position: fixed;
     height: 120%;
     width:auto;
@@ -110,7 +110,7 @@ and (orientation : landscape){
   }
 }
 
-#the-box{
+#the-box,#container{
   position: relative;
  	width: 100%;
  /* min-width: 500px;*/
@@ -126,7 +126,7 @@ and (orientation : landscape){
   font-size: 1.4rem;
   margin-bottom: 0;
 }
-#the-box img{
+#the-box img,#container img{
 	position: relative;
 	width:100%;
 }
