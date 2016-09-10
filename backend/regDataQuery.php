@@ -7,7 +7,7 @@
  */
 error_reporting(0);
 $ref = $_SERVER['HTTP_REFERER'];
-if (strpos($ref, 'yiban.bupt.edu.cn') === FALSE) {
+if (strpos($ref, 'yiban') === FALSE) {
     header('Location:../index.php');
     exit;
 }
